@@ -1,6 +1,38 @@
 {
-  "epic": {},
-  "gamerpower": {},
+  "epic": {
+    "a9748abde1c94b66aae5250bb9fc5503": {
+      "title": "Idle Champions de Forgotten Realms",
+      "notifiedAt": "2026-11-06T22:02:08.707Z"
+    },
+    "3be0a0d8479946d78f60d90c9442a0b4": {
+      "title": "Flotsam",
+      "notifiedAt": "2026-11-06T22:02:10.646Z"
+    }
+  },
+  "gamerpower": {
+    "2204": {
+      "title": "Dual Chroma: Academy Carols (itch.io) Giveaway",
+      "notifiedAt": "2026-11-06T22:02:16.419Z"
+    },
+    "3716": {
+      "title": "Dwarven Realms (Steam) Key Giveaway",
+      "notifiedAt": "2026-11-06T22:02:16.418Z"
+    },
+    "3830": {
+      "title": "Free itch.io Games Bundle",
+      "notifiedAt": "2026-11-06T22:02:16.417Z"
+    },
+    "3843": {
+      "title": "Letter Quest: Grimm's Journey Remastered Steam Key Giveaway",
+      "notifiedAt": "2026-11-06T22:02:14.735Z"
+    }
+  },
   "youtube": {},
-  "youtubeChannelCache": {}
+  "youtubeChannelCache": {
+    "@PlayStationES": "UC2oSBKxBEyUC_No8ELUkz4w",
+    "@NintendoES": "UC7jT5YnTBAOf2JTRrCR0K6g",
+    "@XboxES": "UCupNSN_RdcH7GEkqHBzAoSg",
+    "@3djuegos": "UC05m1jT_pGm-DJKlpXsBYkA",
+    "@IGNEspana": "UCh-vUXb6yAa0urKEgI1p2WA"
+  }
 }
