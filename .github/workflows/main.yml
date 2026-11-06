@@ -1,0 +1,50 @@
+name: 🎮 MixGamer Discord Alerts
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  check-alerts:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Descargar repositorio
+        uses: actions/checkout@v4
+
+      - name: 🟢 Configurar Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: 📦 Instalar dependencias
+        run: npm install
+
+      - name: 🔍 Ejecutar escaneo de Juegos Gratis y Tráilers
+        env:
+          DISCORD_WEBHOOK_FREE_GAMES: ${{ secrets.DISCORD_WEBHOOK_FREE_GAMES }}
+          DISCORD_WEBHOOK_TRAILERS: ${{ secrets.DISCORD_WEBHOOK_TRAILERS }}
+          ROLE_ID_FREE_GAMES: ${{ secrets.ROLE_ID_FREE_GAMES }}
+          ROLE_ID_TRAILERS: ${{ secrets.ROLE_ID_TRAILERS }}
+          EPIC_COUNTRY: 'ES'
+          EPIC_LOCALE: 'es-ES'
+          INCLUDE_FREE_DLCS: 'false'
+          SEED_ON_FIRST_RUN: 'true'
+          FIRST_RUN_MAX_ALERTS_PER_SOURCE: '2'
+        run: npm run once
+
+      - name: 💾 Guardar historial actualizado en el repositorio
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/history.json
+          if git diff --staged --quiet; then
+            echo "Sin cambios en data/history.json"
+          else
+            git commit -m "chore(history): actualizar historial de alertas notificadas [skip ci]"
+            git push
+          fi
