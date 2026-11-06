@@ -1,0 +1,9 @@
+services:
+  bot-mixgamer:
+    build: .
+    container_name: bot-mixgamer
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      - ./data:/app/data

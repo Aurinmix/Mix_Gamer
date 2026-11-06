@@ -1,0 +1,22 @@
+{
+  "name": "bot-mixgamer",
+  "version": "1.0.0",
+  "description": "Centro automatizado de alertas de videojuegos gratis y tráilers para Discord",
+  "main": "index.js",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "once": "node index.js --once",
+    "test:epic": "node index.js --once --only=epic",
+    "test:free": "node index.js --once --only=gamerpower",
+    "test:youtube": "node index.js --once --only=youtube"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "node-cron": "^3.0.3",
+    "rss-parser": "^3.13.0"
+  }
+}
